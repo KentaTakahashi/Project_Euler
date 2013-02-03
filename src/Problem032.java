@@ -72,10 +72,9 @@ public class Problem032 {
 
 	public static void  addPandCheackList(int n)
 	{
-		while(n >= 1)
-		{
-			pandCheackList.add(n % 10);
-			n /= 10;
+		int digit = String.valueOf(n).length();
+		for(int i = digit; i >= 1; i--){
+			pandCheackList.add((n / (int)Math.pow(10, i - 1)) % 10);
 		}
 		return;
 	}
